@@ -10,7 +10,7 @@ const Calculator: React.FC = () => {
 
   return (
     <section className=" mx-auto my-16 px-4">
-      <AnimatedHeading className="mb-6 text-left">
+      <AnimatedHeading className="mb-8 text-left">
         Калькулятор вартості
       </AnimatedHeading>
       <div className="flex gap-4 mb-8">

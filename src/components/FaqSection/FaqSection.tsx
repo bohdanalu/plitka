@@ -7,7 +7,7 @@ const FaqSection: React.FC = () => {
 
   return (
     <section className="my-16">
-      <AnimatedHeading className="mb-3.5 text-left">
+      <AnimatedHeading className="mb-8 text-left">
         Питання та відповіді
       </AnimatedHeading>
       <div className="space-y-4">
