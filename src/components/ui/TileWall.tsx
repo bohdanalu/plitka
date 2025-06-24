@@ -18,7 +18,6 @@ const rows = [
 const directions = ["left", "right", "top", "bottom"] as const;
 type Direction = (typeof directions)[number];
 
-// Випадковий напрямок для кожної плитки
 const getRandomDirection = () =>
   directions[Math.floor(Math.random() * directions.length)];
 
@@ -40,19 +39,25 @@ const getTransform = (direction: Direction, show: boolean) => {
 
 const getColor = (idx: number) => tileColors[idx % tileColors.length];
 
-const TileWall: React.FC = () => {
+type TileWallProps = { animate?: boolean };
+
+const TileWall: React.FC<TileWallProps> = ({ animate = false }) => {
   const [visible, setVisible] = useState<number>(0);
-  // Зберігаємо напрямки для кожної плитки, щоб не змінювались при ререндері
+
   const [tileDirections] = useState<Direction[]>(
     Array.from({ length: 12 }, getRandomDirection)
   );
 
   useEffect(() => {
+    if (!animate) {
+      setVisible(0);
+      return;
+    }
     if (visible < 12) {
       const timeout = setTimeout(() => setVisible(visible + 1), 140);
       return () => clearTimeout(timeout);
     }
-  }, [visible]);
+  }, [visible, animate]);
 
   let tileIdx = 0;
   return (

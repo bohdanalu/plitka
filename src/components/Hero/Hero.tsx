@@ -18,7 +18,7 @@ const Hero: React.FC = () => (
       </Link>
     </div>
     <div className="flex items-center justify-center w-full md:w-auto">
-      <TileWall />
+      <TileWall animate={true} />
     </div>
   </section>
 );
