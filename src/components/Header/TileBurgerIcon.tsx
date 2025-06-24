@@ -14,7 +14,6 @@ const TileBurgerIcon: React.FC<Props> = ({ open = false, className = "" }) => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    {/* Верхня плитка */}
     <rect
       x="4"
       y="7"
@@ -30,7 +29,6 @@ const TileBurgerIcon: React.FC<Props> = ({ open = false, className = "" }) => (
         transformOrigin: "16px 9px",
       }}
     />
-    {/* Середня плитка */}
     <rect
       x="4"
       y="14"
@@ -43,7 +41,7 @@ const TileBurgerIcon: React.FC<Props> = ({ open = false, className = "" }) => (
         opacity: open ? 0 : 1,
       }}
     />
-    {/* Нижня плитка */}
+
     <rect
       x="4"
       y="21"

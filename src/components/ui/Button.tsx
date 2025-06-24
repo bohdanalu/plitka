@@ -9,15 +9,15 @@ const Button: React.FC<ButtonProps> = ({ children, ...props }) => (
     className="
       px-6 py-2 rounded 
       md:px-8 md:py-3 md:text-base
-      bg-[var(--color-accent)] 
+      bg-accent
       text-white 
       font-semibold 
       shadow 
-      hover:bg-[var(--color-secondary)] 
+      hover:bg-secondary 
       transition
       focus:outline-none
       focus:ring-2
-      focus:ring-[var(--color-primary)]
+      focus:ring-primary
       focus:ring-offset-2
       active:scale-95
     "
