@@ -3,16 +3,16 @@ import img1 from "../../assets/images/image1.jpg";
 import img2 from "../../assets/images/image2.jpg";
 import img3 from "../../assets/images/image3.jpg";
 import img4 from "../../assets/images/image4.jpg";
-import AnimatedTitle from "../ui/AnimatedTitle";
 import { Link } from "react-router-dom";
+import AnimatedHeading from "../ui/AnimatedHeading";
 
 const Gallery: React.FC = () => {
   return (
     <section className="bg-[var(--color-bg)] h-full py-6 sm:py-8 lg:py-12 my-16">
       <div className="mx-auto max-w-screen-2xl">
-        <div className="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
+        <div className="mb-4 flex flex-col md:flex-row items-center justify-between gap-8 sm:mb-8 md:mb-12">
           <div className="flex items-center gap-12">
-            <AnimatedTitle title="Камінь... природня краса" />
+            <AnimatedHeading>Камінь... природня краса</AnimatedHeading>
           </div>
 
           <Link
@@ -24,7 +24,7 @@ const Gallery: React.FC = () => {
               hover:bg-[var(--color-accent)] hover:text-white hover:shadow-lg 
               focus-visible:ring focus-visible:ring-[var(--color-accent)]
               active:bg-[var(--color-muted)]
-              md:px-8 md:py-3 md:text-base
+              md:px-8 md:py-3 md:text-base self-end
             "
           >
             More
