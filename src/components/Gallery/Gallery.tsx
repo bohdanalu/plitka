@@ -8,7 +8,7 @@ import AnimatedHeading from "../ui/AnimatedHeading";
 
 const Gallery: React.FC = () => {
   return (
-    <section className="bg-[var(--color-bg)] h-full py-6 sm:py-8 lg:py-12 my-16">
+    <section className=" h-full py-6 sm:py-8 lg:py-12 my-16">
       <div className="mx-auto max-w-screen-2xl">
         <div className="mb-4 flex flex-col md:flex-row items-center justify-between gap-8 sm:mb-8 md:mb-12">
           <div className="flex items-center gap-12">
@@ -18,12 +18,12 @@ const Gallery: React.FC = () => {
           <Link
             to="portfolio"
             className="
-              inline-block border border-[var(--color-accent)] bg-[var(--color-bg)]
-             px-6 py-2 rounded  text-center text-sm font-semibold text-[var(--color-dark)]
-              outline-none ring-[var(--color-accent)] transition-all duration-200
-              hover:bg-[var(--color-accent)] hover:text-white hover:shadow-lg 
-              focus-visible:ring focus-visible:ring-[var(--color-accent)]
-              active:bg-[var(--color-muted)]
+              inline-block border border-accent bg--bg
+             px-6 py-2 rounded  text-center text-sm font-semibold text-dark
+              outline-none ring-accent transition-all duration-200
+              hover:bg-accent hover:text-white hover:shadow-lg 
+              focus-visible:ring focus-visible:ring-accent
+              active:bg-muted
               md:px-8 md:py-3 md:text-base self-end
             "
           >

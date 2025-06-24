@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import TileBurgerIcon from "./TileBurgerIcon";
 import { Link } from "react-router-dom";
+import { NAV_LINKS } from "../../constants/constants";
 
-const navLinks = [
-  { href: "/", label: "Головна" },
-  { href: "portfolio", label: "Галерея" },
-  { href: "/calculator", label: "Калькулятор" },
-];
 
 const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -19,10 +15,10 @@ const Header: React.FC = () => {
       <div className="font-bold text-lg">Логотип</div>
       {/* Desktop nav */}
       <nav className="hidden md:flex space-x-4">
-        {navLinks.map((link) => (
+        {NAV_LINKS.map((link) => (
           <Link
             key={link.label}
-            to={link.href}
+            to={link.to}
             className="hover:text-[var(--color-muted)] transition"
           >
             {link.label}
@@ -49,10 +45,10 @@ const Header: React.FC = () => {
           }
         `}
       >
-        {navLinks.map((link) => (
+        {NAV_LINKS.map((link) => (
           <Link
             key={link.label}
-            to={link.href}
+            to={link.to}
             className="text-2xl font-semibold text-[var(--color-dark)] hover:text-[var(--color-accent)] transition"
             onClick={() => setOpen(false)}
           >

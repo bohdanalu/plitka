@@ -8,7 +8,7 @@ type AnimatedHeadingProps = {
 
 const AnimatedHeading: React.FC<AnimatedHeadingProps> = ({
   children,
-  className = "text-3xl font-semibold text-accent",
+  className = "",
   as: Tag = "h2",
 }) => {
   const ref = useRef<HTMLHeadingElement | null>(null);
@@ -29,7 +29,12 @@ const AnimatedHeading: React.FC<AnimatedHeadingProps> = ({
 
   return React.createElement(
     Tag,
-    { ref, className: `transition-all duration-700 ease-out ${inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-16"} ${className}` },
+    {
+      ref,
+      className: `text-3xl font-semibold text-accent transition-all duration-700 ease-out ${
+        inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-16"
+      } ${className}`,
+    },
     children
   );
 };

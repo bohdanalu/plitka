@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-
 const tileColors = [
-  "#e2c290", "#d6c4ab", "#ba775a", "#cfc7b2", "#e2c290", "#d6c4ab"
+  "#e2c290",
+  "#d6c4ab",
+  "#ba775a",
+  "#cfc7b2",
+  "#e2c290",
+  "#d6c4ab",
 ];
-
 
 const rows = [
   [0, 1, 2, 3],
@@ -12,21 +15,26 @@ const rows = [
   [3, 4, 5, 0],
 ];
 
-
 const directions = ["left", "right", "top", "bottom"] as const;
-type Direction = typeof directions[number];
+type Direction = (typeof directions)[number];
 
 // Випадковий напрямок для кожної плитки
-const getRandomDirection = () => directions[Math.floor(Math.random() * directions.length)];
+const getRandomDirection = () =>
+  directions[Math.floor(Math.random() * directions.length)];
 
 const getTransform = (direction: Direction, show: boolean) => {
   if (show) return "translate(0,0)";
   switch (direction) {
-    case "left": return "translateX(-100vw)";
-    case "right": return "translateX(100vw)";
-    case "top": return "translateY(-100vh)";
-    case "bottom": return "translateY(100vh)";
-    default: return "translateY(-100vh)";
+    case "left":
+      return "translateX(-100vw)";
+    case "right":
+      return "translateX(100vw)";
+    case "top":
+      return "translateY(-100vh)";
+    case "bottom":
+      return "translateY(100vh)";
+    default:
+      return "translateY(-100vh)";
   }
 };
 

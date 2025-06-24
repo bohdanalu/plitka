@@ -19,12 +19,11 @@ const images = [
 ];
 
 const Portfolio: React.FC = () => {
-  const [modalImg, setModalImg] = useState<null | typeof images[0]>(null);
+  const [modalImg, setModalImg] = useState<null | (typeof images)[0]>(null);
 
   return (
-    <section className="flex flex-col items-center justify-center w-full my-16">
-      <AnimatedHeading >Галерея робіт</AnimatedHeading>
-
+    <section className="w-full my-16">
+      <AnimatedHeading className="text-left">Галерея робіт</AnimatedHeading>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 xl:gap-8 w-full mt-12">
         {images.map((img, idx) => (
@@ -52,7 +51,12 @@ const Portfolio: React.FC = () => {
               aria-label="Закрити"
             >
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <path
+                  d="M6 6l12 12M6 18L18 6"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
               </svg>
             </button>
             <img
