@@ -1,14 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TileBurgerIcon from "./TileBurgerIcon";
 import { Link } from "react-router-dom";
 import { NAV_LINKS } from "../../constants/constants";
+import AnimatedDecor from "../ui/AnimatedDecor";
 
 const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [open]);
+
   return (
     <header
-      className="w-full py-3  text-white shadow-md fixed top-0 left-0 z-30"
+      className="w-full text-white shadow-md fixed top-0 left-0 z-30 "
       style={{ background: "rgba(15, 15, 15, 0.78)" }}
     >
       <div className="container flex justify-between items-center">
@@ -45,6 +57,27 @@ const Header: React.FC = () => {
           }
         `}
         >
+          <AnimatedDecor
+            animationType="bounce"
+            delay={300}
+            className="absolute top-8 left-8 w-12 h-12 bg-muted rounded-lg"
+          />
+          <AnimatedDecor
+            animationType="slideIn"
+            delay={500}
+            className="absolute bottom-8 right-8 w-16 h-16 bg-muted rounded-lg transform rotate-45"
+          />
+          <AnimatedDecor
+            animationType="fadeIn"
+            delay={700}
+            className="absolute top-1/2 left-4 w-8 h-8 bg-dark rounded-full"
+          />
+          <AnimatedDecor
+            animationType="rotate"
+            delay={900}
+            className="absolute top-1/2 right-4 w-6 h-6 bg-accent/75 rounded-lg"
+          />
+
           {NAV_LINKS.map((link) => (
             <Link
               key={link.label}
