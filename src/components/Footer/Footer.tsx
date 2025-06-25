@@ -18,7 +18,8 @@ const socials = [
 ];
 
 const Footer: React.FC = () => (
-  <footer className="w-full bg-dark text-white py-8 mt-16">
+  <footer className="w-full bg-dark text-white py-8 mt-16 relative">
+    
     <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
       <nav className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
         {NAV_LINKS.map((link) => (

@@ -5,20 +5,20 @@ import HomePage from "./pages/HomePage";
 import CalculatorPage from "./pages/CalculatorPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import "./App.css";
+import ScrollToTop from "./components/ui/ScrollToTop";
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/plitka">
+      <ScrollToTop />
       <div className="flex flex-col w-full min-h-screen bg-[var(--color-bg)] text-[var(--color-dark)]">
         <Header />
-        <main className="flex-1 pt-[65px]">
-          <div className="container">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/calculator" element={<CalculatorPage />} />
-              <Route path="/portfolio" element={<PortfolioPage />} />
-            </Routes>
-          </div>
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/calculator" element={<CalculatorPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+          </Routes>
         </main>
         <Footer />
       </div>

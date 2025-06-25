@@ -31,7 +31,7 @@ const AnimatedHeading: React.FC<AnimatedHeadingProps> = ({
     Tag,
     {
       ref,
-      className: `text-3xl font-semibold text-accent transition-all duration-700 ease-out ${
+      className: `text-3xl md:text-4xl font-semibold text-dark transition-all duration-700 ease-out ${
         inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-16"
       } ${className}`,
     },

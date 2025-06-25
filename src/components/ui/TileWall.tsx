@@ -10,9 +10,11 @@ const tileColors = [
 ];
 
 const rows = [
-  [0, 1, 2, 3],
-  [4, 5, 0, 1, 2],
-  [3, 4, 5, 0],
+  [0, 1, 2, 3, 4, 5],
+  [4, 5, 0, 1, 2, 3, 4],
+  [2, 3, 4, 5, 0, 1, 2, 3],
+  [0, 1, 2, 3, 4, 5, 0, 1],
+  [0, 1, 2, 3, 4, 5],
 ];
 
 const directions = ["left", "right", "top", "bottom"] as const;
@@ -44,8 +46,11 @@ type TileWallProps = { animate?: boolean };
 const TileWall: React.FC<TileWallProps> = ({ animate = false }) => {
   const [visible, setVisible] = useState<number>(0);
 
+  // Calculate total number of tiles
+  const totalTiles = rows.reduce((sum, row) => sum + row.length, 0);
+
   const [tileDirections] = useState<Direction[]>(
-    Array.from({ length: 12 }, getRandomDirection)
+    Array.from({ length: totalTiles }, getRandomDirection)
   );
 
   useEffect(() => {
@@ -53,11 +58,11 @@ const TileWall: React.FC<TileWallProps> = ({ animate = false }) => {
       setVisible(0);
       return;
     }
-    if (visible < 12) {
+    if (visible < totalTiles) {
       const timeout = setTimeout(() => setVisible(visible + 1), 140);
       return () => clearTimeout(timeout);
     }
-  }, [visible, animate]);
+  }, [visible, animate, totalTiles]);
 
   let tileIdx = 0;
   return (
