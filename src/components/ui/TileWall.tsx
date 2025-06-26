@@ -59,7 +59,7 @@ const TileWall: React.FC<TileWallProps> = ({ animate = false }) => {
       return;
     }
     if (visible < totalTiles) {
-      const timeout = setTimeout(() => setVisible(visible + 1), 140);
+      const timeout = setTimeout(() => setVisible(visible + 1), 80);
       return () => clearTimeout(timeout);
     }
   }, [visible, animate, totalTiles]);
@@ -77,8 +77,8 @@ const TileWall: React.FC<TileWallProps> = ({ animate = false }) => {
               opacity: show ? 0.85 : 0.12,
               filter: show ? "blur(1.2px)" : "blur(3px)",
               transform: getTransform(direction, show),
-              transition: "all 1.2s cubic-bezier(.77,0,.18,1)",
-              transitionDelay: `${tileIdx * 0.08}s`,
+              transition: "all 0.7s cubic-bezier(.77,0,.18,1)",
+              transitionDelay: `${tileIdx * 0.04}s`,
               width: 60,
               height: 32,
               borderRadius: 6,

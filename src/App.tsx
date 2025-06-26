@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage";
-import CalculatorPage from "./pages/CalculatorPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import "./App.css";
 import ScrollToTop from "./components/ui/ScrollToTop";
@@ -16,7 +15,6 @@ const App = () => {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/calculator" element={<CalculatorPage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
           </Routes>
         </main>

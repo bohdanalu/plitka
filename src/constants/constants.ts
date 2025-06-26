@@ -12,7 +12,6 @@ import img7 from "../assets/images/image7.jpg";
 export const NAV_LINKS = [
   { to: "/", label: "Головна" },
   { to: "/portfolio", label: "Галерея" },
-  { to: "/calculator", label: "Калькулятор" },
 ];
 
 export const STONES = [
