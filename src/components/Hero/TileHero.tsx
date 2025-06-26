@@ -79,13 +79,13 @@ const TileHero: React.FC = () => {
       x: 0,
       y: 0,
       stagger: { each: 0.03, from: "random" },
-      duration: 0.6,
+      duration: 0.38,
       ease: "power3.out",
       onComplete: () => {
         gsap.to(heroTitle, {
           opacity: 1,
           y: 0,
-          duration: 1.2,
+          duration: 0.7,
           ease: "power2.out",
         });
       },

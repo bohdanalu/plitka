@@ -2,15 +2,16 @@ import React, { useRef, useState, useEffect } from "react";
 import TileWall from "../ui/TileWall";
 import Button from "../ui/Button";
 import AnimatedDecor from "../ui/AnimatedDecor";
-import { Link } from "react-router-dom";
 import AnimatedHeading from "../ui/AnimatedHeading";
+import Calculator from "../Calculator/Calculator";
 
 const TilesCtaSection: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
+  const [calcOpen, setCalcOpen] = useState(false);
 
   useEffect(() => {
-    if (!ref.current) return;
+    if (!ref.current) return
     const observer = new window.IntersectionObserver(
       ([entry]) => setInView(entry.isIntersecting),
       { threshold: 0.4 }
@@ -45,9 +46,9 @@ const TilesCtaSection: React.FC = () => {
             фасаду, доріжки чи декору. Просто натисни на кнопку нижче та
             скористайся калькулятором!
           </p>
-          <Link to="/calculator">
-            <Button>Перейти до калькулятора</Button>
-          </Link>
+
+          <Button onClick={() => setCalcOpen(true)}>Перейти до калькулятора</Button>
+          <Calculator open={calcOpen} onClose={() => setCalcOpen(false)} />
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@ import AnimatedHeading from "../components/ui/AnimatedHeading";
 import ImageGallery from "../components/Gallery/ImageGallery";
 import { GALLERY_IMAGES } from "../constants/constants";
 import Button from "../components/ui/Button";
-import OrderForm from "../components/Calculator/OrderForm";
+import OrderForm from "../components/ui/OrderForm";
 
 const Portfolio: React.FC = () => {
   const [showForm, setShowForm] = useState(false);

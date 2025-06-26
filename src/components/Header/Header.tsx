@@ -3,9 +3,12 @@ import TileBurgerIcon from "./TileBurgerIcon";
 import { Link } from "react-router-dom";
 import { NAV_LINKS } from "../../constants/constants";
 import AnimatedDecor from "../ui/AnimatedDecor";
+import Calculator from "../Calculator/Calculator";
+import { FaCalculator } from "react-icons/fa";
 
 const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const [calcOpen, setCalcOpen] = useState(false);
 
   useEffect(() => {
     if (open) {
@@ -31,7 +34,7 @@ const Header: React.FC = () => {
             <Link
               key={link.label}
               to={link.to}
-              className="hover:text-[var(--color-muted)] transition"
+              className="hover:text-[var(--color-muted)] transition px-4 py-2 rounded"
             >
               {link.label}
             </Link>
@@ -44,6 +47,12 @@ const Header: React.FC = () => {
           onClick={() => setOpen((v) => !v)}
         >
           <TileBurgerIcon open={open} />
+        </button>
+        <button
+          className="ml-4 px-4 py-2 bg-accent text-white rounded hover:bg-secondary transition hidden md:block"
+          onClick={() => setCalcOpen(true)}
+        >
+          <FaCalculator />
         </button>
         {/* Mobile menu */}
         <div
@@ -82,14 +91,24 @@ const Header: React.FC = () => {
             <Link
               key={link.label}
               to={link.to}
-              className="text-2xl font-semibold text-[var(--color-dark)] hover:text-[var(--color-accent)] transition"
+              className="text-2xl block p-3 font-semibold text-[var(--color-dark)] hover:text-[var(--color-accent)] transition rounded"
               onClick={() => setOpen(false)}
             >
               {link.label}
             </Link>
           ))}
+          <button
+            className="px-6 py-3 bg-accent text-white rounded text-xl font-semibold hover:bg-secondary transition"
+            onClick={() => {
+              setCalcOpen(true);
+              setOpen(false);
+            }}
+          >
+            Калькулятор
+          </button>
         </div>
       </div>
+      <Calculator open={calcOpen} onClose={() => setCalcOpen(false)} />
     </header>
   );
 };
